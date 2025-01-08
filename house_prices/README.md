@@ -54,7 +54,8 @@ Liste as ferramentas e tecnologias utilizadas:
 ## 🔍 Análise de Dados
 
 Inclua um resumo do que foi analisado, por exemplo:
-[Relatório de estudo](relatorios/urbs.pdf)
+[Relatório de estudo](relatorios/relatorio.pdf)
+![imagem](relatorios/imagens/teste.png)
 - Estatísticas descritivas.
 - Visualizações principais.
 - Descobertas interessantes.
