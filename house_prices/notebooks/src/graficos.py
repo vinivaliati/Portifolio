@@ -59,3 +59,66 @@ def compare_variables(df, target):
 
     plt.tight_layout()
     plt.show()
+
+
+
+def plot_correlation_with_target(df, target):
+    """
+    Gera um gráfico de barras mostrando a correlação das colunas numéricas de um DataFrame 
+    com uma coluna-alvo específica.
+    
+    Parâmetros:
+        df (DataFrame): O DataFrame contendo os dados.
+        target_column (str): O nome da coluna-alvo para calcular as correlações.
+    """
+    # Seleciona apenas colunas numéricas (int e float)
+    numeric_df = df.select_dtypes(include=['int64', 'float64'])
+    
+    # Calcula a correlação com a coluna-alvo
+    if target not in numeric_df:
+        raise ValueError(f"A coluna '{target}' não é numérica ou não está no DataFrame.")
+    
+    correlation = numeric_df.corr()[target].sort_values()
+    
+    # Configura o tamanho do gráfico
+    plt.figure(figsize=(10, 8))
+    
+    # Plota o gráfico de barras
+    ax = sns.barplot(x=correlation.index, y=correlation.values, color='skyblue')
+    
+    # Adiciona os valores nas colunas
+    for i, value in enumerate(correlation.values):
+        plt.text(i, value + 0.01 if value > 0 else value - 0.01,  # Ajusta posição do texto
+                 f'{value:.2f}', ha='center', va='bottom' if value > 0 else 'top', fontsize=10)
+    
+    # Remove gridlines
+    ax.grid(False)
+    
+    # Configurações estéticas
+    plt.xticks(rotation=90)
+    plt.title(f"Correlação com {target}")
+    plt.ylabel("Coeficiente de Correlação")
+    plt.xlabel("Variáveis")
+    plt.tight_layout()
+    plt.show()
+
+
+
+def plot_target_correlation_heatmap(df, target):
+    numeric_df = df.select_dtypes(include=['int64', 'float64'])
+    if target not in numeric_df:
+        raise ValueError(f"A coluna '{target}' não é numérica ou não está no DataFrame.")
+    correlation = numeric_df.corr()[[target]].sort_values(by=target)
+    plt.figure(figsize=(6, len(correlation) * 0.5))
+    sns.heatmap(
+        correlation,
+        annot=True,
+        fmt=".2f",
+        cmap="coolwarm",
+        cbar=False
+    )
+    plt.title(f"Heatmap de Correlação com '{target}'")
+    plt.xlabel("Correlação")
+    plt.ylabel("Variáveis")
+    plt.tight_layout()
+    plt.show()
