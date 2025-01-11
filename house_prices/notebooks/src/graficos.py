@@ -58,6 +58,7 @@ def compare_variables(df, target):
         fig_num.delaxes(ax)
 
     plt.tight_layout()
+    plt.savefig("grafico.png", format="png")
     plt.show()
 
 
