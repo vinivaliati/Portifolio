@@ -239,19 +239,6 @@ Exterior2nd: Exterior covering on house (if more than one material)
        Wd Sdng	Wood Siding
        WdShing	Wood Shingles
 	
-# Supondo que 'df' seja o DataFrame contendo os dados
-# Criando uma nova coluna 'MasVnrFlag' para categorizar as casas com ou sem revestimento de alvenaria
-df['MasVnrFlag'] = df['MasVnrType'].apply(lambda x: 'None' if x == 'None' else 'Has Masonry')
-
-# Criando o boxplot
-plt.figure(figsize=(10,6))
-sns.boxplot(x='MasVnrFlag', y='SalePrice', data=df)
-
-# Títulos e exibição do gráfico
-plt.title('Distribuição do Preço de Venda por Tipo de Revestimento de Alvenaria')
-plt.xlabel('Tipo de Revestimento de Alvenaria')
-plt.ylabel('Preço de Venda')
-plt.show()
 	
 MasVnrArea: Masonry veneer area in square feet
 
