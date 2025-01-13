@@ -1,20 +1,17 @@
 # Nome do Projeto
 
-Uma breve descrição do projeto, explicando o problema abordado e o objetivo principal.
+Nesse projeto analisamos a base de desafio do kaggle House Prices - Advanced Regression Techniques, e previmos o preço das casas testando alguns modelos de machine learning. O pricipal foco desse projeto era testar diferentes modelos, e principalmente focando em tecnicas feature engineering, para a melhora do modelo
 
 ## 📚 Contexto
 
-Explique o contexto do projeto:
-- Qual é o problema que você está resolvendo?
-- Por que este projeto é importante?
-- Alguma informação de fundo relevante.
+- Desafio do Kaggle
+- Useo muito a documentação das colunas
+- Fiz um relatório explicando o porque de cada escolha em relação as colunas nesse [link].(teste)
 
 ## 🎯 Objetivo
 
-Defina os objetivos do projeto de maneira clara. Por exemplo:
-- Criar um modelo preditivo para [especificar problema].
-- Analisar [dados ou contexto].
-- Desenvolver insights que ajudem em [resultado desejado].
+- Criar um modelo preditivo para prever preço de casas.
+- Analise cuidadosa das colunas.
 
 ## Organização do projeto
 
@@ -26,8 +23,6 @@ Defina os objetivos do projeto de maneira clara. Por exemplo:
 ├── README.md          <- README principal para desenvolvedores que usam este projeto.
 |
 ├── dados              <- Arquivos de dados para o projeto.
-|
-├── modelos            <- Modelos treinados e serializados, previsões de modelos ou resumos de modelos
 |
 ├── notebooks          <- Cadernos Jupyter.
 │
